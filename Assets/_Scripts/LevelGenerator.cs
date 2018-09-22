@@ -18,7 +18,7 @@ public class LevelGenerator : MonoBehaviour {
     /// </summary>
     private Vector3 lastSpawnPosition;
 
-    void Start()
+
 
 	void Update () {
 		
