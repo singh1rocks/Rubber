@@ -10,13 +10,14 @@ public class PlayerHealth : MonoBehaviour {
     public GameObject player;
     Rigidbody p;
     public bool freeze;
-
+    public Text healthLabel;
 	// Use this for initialization
 
 
     void Start()
     {
         p = player.GetComponent<Rigidbody>();
+        currentHealth = 3;
     }
 
     void Update()
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             p.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         }
+        healthLabel.text = currentHealth.ToString();
     }
     public void takeDamage(int amount)
     {
