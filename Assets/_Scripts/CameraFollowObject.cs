@@ -11,7 +11,7 @@ public class CameraFollowObject : MonoBehaviour {
     public Vector3 offset = Vector3.up + Vector3.back;
     
 	void Update () {
-        Camera.main.transform.position = transform.position + offset;
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, transform.position + offset, 0.9f);
         Camera.main.transform.LookAt(transform);
 	}
 }
