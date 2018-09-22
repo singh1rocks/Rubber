@@ -17,7 +17,7 @@ public class OwnerFollow : MonoBehaviour {
     }
 
 	void Update () {
-        float desiredX = Mathf.SmoothDamp(transform.position.z, player.transform.position.z, ref HorizontalSpeed, .1f);
-        transform.position = new Vector3(player.transform.position.x + 3, player.transform.position.y, desiredX);
+        float desiredX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref HorizontalSpeed, .1f);
+        transform.position = new Vector3(desiredX, player.transform.position.y, player.transform.position.z - 3);
 	}
 }
