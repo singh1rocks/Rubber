@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9dd765a92bf03f541ba3382d3e3b389f
+guid: a26a805318a841246983208ac1d33f05
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -19,12 +19,7 @@ ModelImporter:
     2300000: pCylinder3
     3300000: pCylinder3
     4300000: pCylinder3
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: 752bf505eebda22418b46d34de6d067c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
