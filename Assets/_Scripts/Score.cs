@@ -22,7 +22,22 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time = Time.deltaTime;
+        //Creates the time to start up
+        time += Time.deltaTime * 10;
+        //waits waitTime seconds and increments score by scoreAdd
+        WaitAndAdd(5, 1);
+        
+        //Debugging
+        Debug.Log(score);
         Debug.Log(time);
 	}
+
+
+    //Waits waitTime seconds and increments score by scoreAdd 
+    IEnumerator WaitAndAdd(float waitTime, int scoreAdd)
+    {
+        yield return new WaitForSeconds(waitTime);
+        score = score + scoreAdd;
+        
+    }
 }
