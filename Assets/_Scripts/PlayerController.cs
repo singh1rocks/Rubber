@@ -46,6 +46,16 @@ public class PlayerController : MonoBehaviour {
             isGrounded = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            playerRB.GetComponent<PlayerHealth>().enabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            playerRB.GetComponent<PlayerHealth>().enabled = true;
+        }
+
     }
 
 
