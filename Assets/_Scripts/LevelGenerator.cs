@@ -25,7 +25,7 @@ public class LevelGenerator : MonoBehaviour {
 
     void Start() {
         lastGroundObject = Instantiate(RandomGroundObject());
-        lastGroundObject.transform.position = player.transform.position + Vector3.down * 2f + Vector3.forward * 2f ; 
+        lastGroundObject.transform.position = player.transform.position + Vector3.down * 2f + Vector3.forward * 2f ;
         lastSpawnPosition = player.transform.position;
     }
 
