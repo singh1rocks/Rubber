@@ -26,25 +26,17 @@ public class PlayerHealth : MonoBehaviour {
         {
             takeDamage(1);
         }
+
+        if (currentHealth <= 0)
+        {
+            p.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        }
     }
     public void takeDamage(int amount)
     {
         currentHealth -= 1;
-
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            p.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-        }
-
-        if (freeze == true)
-        {
-            currentHealth = 0;
-            p.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-            Debug.Log("Frozen");
-        }
     }
-    private void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {

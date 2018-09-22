@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     
-    private Rigidbody playerRB;
+    Rigidbody playerRB;
+    PlayerHealth Health;
 
     private Vector3 movementVector;
     private Vector3 jump;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerRB = GetComponent<Rigidbody>();
-
+        Health = playerRB.GetComponent<PlayerHealth>();
         isGrounded = true;
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
@@ -48,12 +49,12 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            playerRB.GetComponent<PlayerHealth>().enabled = false;
+            Health.enabled = false;
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            playerRB.GetComponent<PlayerHealth>().enabled = true;
+            Health.enabled = true;
         }
 
     }
