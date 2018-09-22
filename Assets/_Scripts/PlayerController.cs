@@ -12,9 +12,14 @@ public class PlayerController : MonoBehaviour {
     public float forwardSpeed;
     public float horizontalSpeed;
 
+    private bool isGrounded;
+
     // Use this for initialization
     void Start () {
         playerRB = GetComponent<Rigidbody>();
+
+        isGrounded = true;
+
 	}
 	
 	// Update is called once per frame
