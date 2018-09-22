@@ -217,11 +217,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114572652337675886, guid: 29d7ecc00481f0b4f87022ab91931912,
-        type: 2}
-      propertyPath: jumpForce
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29d7ecc00481f0b4f87022ab91931912, type: 2}
   m_IsPrefabParent: 0
@@ -238,7 +233,7 @@ GameObject:
   - component: {fileID: 660815118}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

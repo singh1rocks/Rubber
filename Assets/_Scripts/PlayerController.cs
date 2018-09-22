@@ -43,7 +43,18 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             playerRB.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         }
 
+    }
+
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
+            Debug.Log("I jumped.");
+        }
     }
 }
