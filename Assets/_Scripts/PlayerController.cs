@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour {
             Score.scoreAdd = 1;
         }
 
-        Debug.Log(maxJumps);
+        //Debug.Log(maxJumps);
 
     }
 

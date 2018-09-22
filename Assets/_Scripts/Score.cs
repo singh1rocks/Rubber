@@ -30,7 +30,7 @@ public class Score : MonoBehaviour {
 
         //Starts WaitAndAdd
         StartCoroutine(WaitAndAdd());
-        playerController = player.GetComponent<PlayerController>();
+        //playerController = player.GetComponent<PlayerController>();
 
 
 
@@ -42,9 +42,6 @@ public class Score : MonoBehaviour {
         //Creates the time to start up
         time += Time.deltaTime * 10;
         setTimeText();
-
-        
-        Debug.Log(score);
         
         //Debug.Log(time);
     }
