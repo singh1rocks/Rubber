@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
-            Debug.Log("I jumped.");
         }
     }
 }
