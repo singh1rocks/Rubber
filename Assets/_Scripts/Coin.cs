@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour {
     public Score myScore;
+    public bool isDoubled;
 
     private void Start()
     {
@@ -11,7 +12,14 @@ public class Coin : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider Score)
     {
-        myScore.score += 10;
+        if (isDoubled)
+        {
+            myScore.score += 20;
+        }
+        else
+        {
+            myScore.score += 10;
+        }
         Destroy(this);
     }
 }
