@@ -22,7 +22,21 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time = Time.deltaTime;
+        time += Time.deltaTime * 10;
+        createScore();
+
+        Debug.Log(score);
         Debug.Log(time);
 	}
+
+    public void createScore()
+    {
+        score = time * 2;
+    }
+
+    public void doubleScore()
+    {
+        
+
+    }
 }
