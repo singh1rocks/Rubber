@@ -12,6 +12,7 @@ public class DestroyOnContact : MonoBehaviour {
     private void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag(GroundTag)) {
             Destroy(col.gameObject);
+
         }
     }
 }

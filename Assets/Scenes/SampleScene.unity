@@ -1067,6 +1067,7 @@ MonoBehaviour:
   currentHealth: 3
   player: {fileID: 1033907214}
   freeze: 0
+  healthLabel: {fileID: 1353080645}
 --- !u!114 &1033907217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1525,7 @@ Prefab:
     - target: {fileID: 114572652337675886, guid: 29d7ecc00481f0b4f87022ab91931912,
         type: 2}
       propertyPath: forwardSpeed
-      value: 5
+      value: 8.04
       objectReference: {fileID: 0}
     - target: {fileID: 1032916422119598, guid: 29d7ecc00481f0b4f87022ab91931912, type: 2}
       propertyPath: m_IsActive
@@ -1817,7 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1033907214}
   genDistance: 24.54
-  maxOffset: 2.69
+  maxOffset: 3.96
   groundObjects:
   - {fileID: 1314359159062526, guid: 00d6745bebd8afa498fb12be10164bc8, type: 2}
   - {fileID: 1632173815146612, guid: c81824c42d14ea548b9b5d3289df07e0, type: 2}

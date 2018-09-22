@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathFloor : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class DeathFloor : MonoBehaviour {
         if (other.gameObject.CompareTag("Player")) 
         {
             playerHP.currentHealth = 0;
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }
