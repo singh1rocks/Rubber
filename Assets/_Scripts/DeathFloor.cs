@@ -13,7 +13,7 @@ public class DeathFloor : MonoBehaviour {
         {
             Debug.Log("NO player found");
         }
-        playerHP = player.GetComponent<PlayerHealth>();
+        //playerHP = player.GetComponent<PlayerHealth>();
     }
     private void OnTriggerEnter(Collider other)
     {

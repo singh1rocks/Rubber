@@ -27,7 +27,7 @@ public class DeathFloorGenerator : MonoBehaviour {
 
     void Start() {
         lastDeathObjects = Instantiate(RandomDeathObject());
-        lastDeathObjects.transform.position = player.transform.position + Vector3.down * 2f + Vector3.forward * 2f ;
+        lastDeathObjects.transform.position = player.transform.position + Vector3.down * 6f + Vector3.forward * 2f ;
         lastSpawnPosition = lastDeathObjects.transform.Find("EndPoint").position;
        
         
@@ -38,8 +38,8 @@ public class DeathFloorGenerator : MonoBehaviour {
             SpawnNewDeathObject();
             lastSpawnPosition = lastDeathObjects.transform.Find("EndPoint").position;
         }
-        Debug.Log(lastDeathObjects.transform.position);
-        lastDeathObjects.transform.position = player.transform.position + Vector3.down * 2f + Vector3.forward * 2f;
+        // Debug.Log(lastDeathObjects.transform.position);
+        lastDeathObjects.transform.position = player.transform.position + Vector3.down * 6f + Vector3.forward * 2f;
     }
 
     private GameObject RandomDeathObject() {
