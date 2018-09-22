@@ -10,12 +10,10 @@ public class OwnerFollow : MonoBehaviour {
     private float rayDistance = 100f; // Should be some remarkably high but stable distance.
 
     Animator animator;
-    PlayerController playerController;
 
 
 	void Start () {
         // player = GameObject.FindGameObjectWithTag("Player"); // The player object.
-        playerController = player.GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
         animator.Play(0);
     }
