@@ -1,25 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+//Author: Fisher
 public class Score : MonoBehaviour {
 
-
-    public float time;
-    public float score;
+    //Declaring the variables
+    public float time = 0;
+    //declares score
+    public float score = 0;
+    //declares the score increment
     public float scoreAdd = 1;
+    //declares the delay at which score was added
     public float delay = 1;
+
+    //Declaring things for the for the (f)UI
+    public Text scoreText;
+    public Text timeText;
 
 
 
 	// Use this for initialization
 	void Start ()
     {
- 
-        //sets value of time to 0
-        time = 0;
-        //sets value of score to 0
-        score = 0;
+
+        //Starts WaitAndAdd
         StartCoroutine(WaitAndAdd());
 
 
@@ -30,26 +36,41 @@ public class Score : MonoBehaviour {
     void Update ()
     {
         //Creates the time to start up
-        //time += Time.deltaTime * 10;
+        time += Time.deltaTime * 10;
+        setTimeText();
 
-        //waits waitTime seconds and increments score by scoreAdd
+        
         Debug.Log(score);
         
         //Debug.Log(time);
     }
 
-    public void incrementScore()
+    //increments score
+    public void IncrementScore()
     {
-            score = score + 1;
+            score = score + scoreAdd;
             StartCoroutine(WaitAndAdd());
+            setScoreText();
     }
 
 
     //Waits waitTime seconds and increments score by scoreAdd 
      private IEnumerator WaitAndAdd()
     {
+        //tells it to wait for (delay) seconds
         yield return new WaitForSeconds(delay);
-        incrementScore();
+        //increment the score
+        IncrementScore();
         
+    }
+
+    public void setScoreText()
+    {
+        scoreText.text = score.ToString();
+    }
+
+    public void setTimeText()
+    {
+        timeText.text = Mathf.RoundToInt(time).ToString();
     }
 }
