@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 5
-  horizontalSpeed: 27.3
+  horizontalSpeed: 20.8
   jumpForce: 4
   powerUpTimer: 5
   powerUpCounter: 0
