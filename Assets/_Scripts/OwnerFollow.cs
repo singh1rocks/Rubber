@@ -8,6 +8,7 @@ public class OwnerFollow : MonoBehaviour {
     float HorizontalSpeed; // Should not be touched. Can be read to get the change in the desired X position.
     float ForwardSpeed; // Should not be touched. Can be read to get the change in the desired Z position.
     private float rayDistance = 100f; // Should be some remarkably high but stable distance.
+    private int minDistance = 0;
 
     Animator animator;
 
@@ -22,7 +23,7 @@ public class OwnerFollow : MonoBehaviour {
         float yPos = determineYOffset();
         Rigidbody rBody = player.GetComponent<Rigidbody>();
         float desiredX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref HorizontalSpeed, .1f);
-        float desiredZ = Mathf.SmoothDamp(transform.position.z, player.transform.position.z - (1 + rBody.velocity.z * .2f), ref ForwardSpeed, .15f);
+        float desiredZ = Mathf.SmoothDamp(transform.position.z, player.transform.position.z - (minDistance + rBody.velocity.z * .2f), ref ForwardSpeed, .15f);
         transform.position = new Vector3(desiredX, yPos, desiredZ);
 	}
 
