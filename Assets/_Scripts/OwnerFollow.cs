@@ -6,22 +6,26 @@ public class OwnerFollow : MonoBehaviour {
 
     public GameObject player; // The player object.
     float HorizontalSpeed; // Should not be touched. Can be read to get the change in the desired X position.
+    float ForwardSpeed; // Should not be touched. Can be read to get the change in the desired Z position.
     private float rayDistance = 100f; // Should be some remarkably high but stable distance.
 
     Animator animator;
+    PlayerController playerController;
 
 
 	void Start () {
-       // player = GameObject.FindGameObjectWithTag("Player"); // The player object.
+        // player = GameObject.FindGameObjectWithTag("Player"); // The player object.
+        playerController = player.GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
         animator.Play(0);
     }
 
 	void Update () {
         float yPos = determineYOffset();
-        Debug.Log(yPos);
+        Rigidbody rBody = player.GetComponent<Rigidbody>();
         float desiredX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref HorizontalSpeed, .1f);
-        transform.position = new Vector3(desiredX, yPos, player.transform.position.z - 3);
+        float desiredZ = Mathf.SmoothDamp(transform.position.z, player.transform.position.z - (1 + rBody.velocity.z * .2f), ref ForwardSpeed, .15f);
+        transform.position = new Vector3(desiredX, yPos, desiredZ);
 	}
 
     public float determineYOffset()
