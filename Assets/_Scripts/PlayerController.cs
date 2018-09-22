@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     private bool jumpAgain;
 
     private int maxJumps;
+    public float powerUpTimer = 5f;
+    public float powerUpCounter = 0f;
 
     // Use this for initialization
     void Start () {
@@ -68,6 +70,16 @@ public class PlayerController : MonoBehaviour {
             maxJumps = 1;
         }
 
+        if(powerUpCounter >= 0)
+        {
+            powerUpCounter -= Time.deltaTime;
+            
+        }
+        else
+        {
+            Score.scoreAdd = 1;
+        }
+
         Debug.Log(maxJumps);
 
     }
@@ -88,6 +100,12 @@ public class PlayerController : MonoBehaviour {
             //canDoubleJump = true;
             maxJumps += 1;
             Debug.Log("Can double jump!");
+        }
+
+        if(other.gameObject.CompareTag("2x Score"))
+        {
+            Score.scoreAdd = 2;
+            powerUpCounter = powerUpTimer;
         }
     }
 }

@@ -11,13 +11,16 @@ public class Score : MonoBehaviour {
     //declares score
     public float score = 0;
     //declares the score increment
-    public float scoreAdd = 1;
+    public static float scoreAdd = 1;
     //declares the delay at which score was added
     public float delay = 1;
 
     //Declaring things for the for the (f)UI
     public Text scoreText;
     public Text timeText;
+
+    PlayerController playerController;
+    public GameObject player;
 
 
 
@@ -27,6 +30,7 @@ public class Score : MonoBehaviour {
 
         //Starts WaitAndAdd
         StartCoroutine(WaitAndAdd());
+        playerController = player.GetComponent<PlayerController>();
 
 
 

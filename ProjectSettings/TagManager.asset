@@ -7,6 +7,7 @@ TagManager:
   - ground
   - Obstacle
   - Double Jump
+  - 2x Score
   layers:
   - Default
   - TransparentFX
