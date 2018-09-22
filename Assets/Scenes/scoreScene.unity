@@ -303,3 +303,5 @@ MonoBehaviour:
   score: 0
   scoreAdd: 1
   delay: 1
+  scoreText: {fileID: 0}
+  timeText: {fileID: 0}

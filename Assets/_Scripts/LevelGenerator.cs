@@ -8,7 +8,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour {
 
     public GameObject player;
-
+    
     public float genDistance = 10f;
 
     public float maxOffset = 3f;
@@ -29,6 +29,9 @@ public class LevelGenerator : MonoBehaviour {
         lastGroundObject = Instantiate(RandomGroundObject());
         lastGroundObject.transform.position = player.transform.position + Vector3.down * 2f + Vector3.forward * 2f ;
         lastSpawnPosition = lastGroundObject.transform.Find("EndPoint").position;
+
+       
+        
     }
 
 	void Update () {
@@ -36,6 +39,7 @@ public class LevelGenerator : MonoBehaviour {
             SpawnNewGroundObject();
             lastSpawnPosition = lastGroundObject.transform.Find("EndPoint").position;
         }
+        
 	}
 
     private GameObject RandomGroundObject() {
