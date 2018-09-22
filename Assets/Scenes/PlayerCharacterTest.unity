@@ -235,7 +235,11 @@ Prefab:
     - target: {fileID: 114572652337675886, guid: 29d7ecc00481f0b4f87022ab91931912,
         type: 2}
       propertyPath: forwardSpeed
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032916422119598, guid: 29d7ecc00481f0b4f87022ab91931912, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29d7ecc00481f0b4f87022ab91931912, type: 2}
@@ -421,7 +425,7 @@ GameObject:
   - component: {fileID: 821029460}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Obstacle
+  m_TagString: Double Jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,7 +491,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821029458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.78, z: 1.703767}
+  m_LocalPosition: {x: -0.02, y: 0.78, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

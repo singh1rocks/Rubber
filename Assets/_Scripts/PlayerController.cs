@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
 
     private bool isGrounded;
+    private bool canDoubleJump;
+    private bool jumpAgain;
+
+    private int maxJumps;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         Health = playerRB.GetComponent<PlayerHealth>();
         isGrounded = true;
         jump = new Vector3(0.0f, 2.0f, 0.0f);
+        maxJumps = 1;
 
 	}
 	
@@ -41,10 +46,11 @@ public class PlayerController : MonoBehaviour {
 
     void Update(){
 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && maxJumps > 0)
         {
             playerRB.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            maxJumps -= 1;
         }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -57,6 +63,13 @@ public class PlayerController : MonoBehaviour {
             Health.enabled = true;
         }
 
+        if(maxJumps <= 0 && isGrounded)
+        {
+            maxJumps = 1;
+        }
+
+        Debug.Log(maxJumps);
+
     }
 
 
@@ -65,6 +78,16 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Double Jump"))
+        {
+            //canDoubleJump = true;
+            maxJumps += 1;
+            Debug.Log("Can double jump!");
         }
     }
 }
