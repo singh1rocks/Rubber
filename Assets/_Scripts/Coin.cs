@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour {
-    public Score score;
+    public Score myScore;
 
     private void Start()
     {
@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider Score)
     {
-        score += 10;
+        myScore.score += 10;
         Destroy(this);
     }
 }
