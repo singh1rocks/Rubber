@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class OwnerFollow : MonoBehaviour {
 
-    GameObject player;
+    public GameObject player;
     float HorizontalSpeed;
 
     Animator animator;
 
 
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player"); // The player object
+       // player = GameObject.FindGameObjectWithTag("Player"); // The player object
         animator = GetComponentInChildren<Animator>();
         animator.Play(0);
     }
