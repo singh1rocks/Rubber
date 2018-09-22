@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody playerRB;
 
     private Vector3 movementVector;
+    private Vector3 jump;
 
     public float forwardSpeed;
     public float horizontalSpeed;
+    public float jumpForce;
 
     private bool isGrounded;
 
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour {
         playerRB = GetComponent<Rigidbody>();
 
         isGrounded = true;
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
 
 	}
 	
@@ -29,11 +32,18 @@ public class PlayerController : MonoBehaviour {
 
         movementVector.x = Input.GetAxisRaw("Horizontal") * horizontalSpeed;
 
-        movementVector.y = Input.GetAxisRaw("Vertical");
-
         movementVector.z = forwardSpeed;
 
         playerRB.AddForce(movementVector);
 
 	}
+
+    void Update(){
+
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            playerRB.AddForce(jump * jumpForce, ForceMode.Impulse);
+        }
+
+    }
 }
