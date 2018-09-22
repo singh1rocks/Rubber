@@ -301,3 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   score: 0
+  scoreAdd: 1
+  delay: 1

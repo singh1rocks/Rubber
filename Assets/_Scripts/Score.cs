@@ -5,39 +5,51 @@ using UnityEngine;
 public class Score : MonoBehaviour {
 
 
-    public double time;
-    public double score;
+    public float time;
+    public float score;
+    public float scoreAdd = 1;
+    public float delay = 1;
+
 
 
 	// Use this for initialization
 	void Start ()
     {
-
+ 
+        //sets value of time to 0
         time = 0;
+        //sets value of score to 0
         score = 0;
-        
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        StartCoroutine(WaitAndAdd());
+
+
+
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         //Creates the time to start up
-        time += Time.deltaTime * 10;
+        //time += Time.deltaTime * 10;
+
         //waits waitTime seconds and increments score by scoreAdd
-        WaitAndAdd(5, 1);
-        
-        //Debugging
         Debug.Log(score);
-        Debug.Log(time);
-	}
+        
+        //Debug.Log(time);
+    }
+
+    public void incrementScore()
+    {
+            score = score + 1;
+            StartCoroutine(WaitAndAdd());
+    }
 
 
     //Waits waitTime seconds and increments score by scoreAdd 
-    IEnumerator WaitAndAdd(float waitTime, int scoreAdd)
+     private IEnumerator WaitAndAdd()
     {
-        yield return new WaitForSeconds(waitTime);
-        score = score + scoreAdd;
+        yield return new WaitForSeconds(delay);
+        incrementScore();
         
     }
 }
